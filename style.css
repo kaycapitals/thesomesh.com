@@ -1,0 +1,124 @@
+/* Somesh Kay — Personal Site style.css */
+/* Warm dark theme, more relaxed vibe */
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #0c0c0c;
+  --bg-alt: #141414;
+  --bg-card: #1a1a1a;
+  --text: #eee;
+  --text-muted: #888;
+  --accent: #e8c547;
+  --accent-soft: rgba(232,197,71,.12);
+  --radius: 10px;
+  --max-w: 900px;
+  --font: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--accent); text-decoration: none; transition: color .2s; }
+a:hover { color: #fff; }
+img { max-width: 100%; display: block; }
+
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 1.25rem; }
+section { padding: 4.5rem 0; }
+
+/* --- Nav --- */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(12,12,12,.88); backdrop-filter: blur(10px);
+  padding: .85rem 0; border-bottom: 1px solid rgba(232,197,71,.1);
+}
+.nav .container { display: flex; align-items: center; justify-content: space-between; }
+.nav-name { font-weight: 700; font-size: 1.05rem; color: var(--accent); letter-spacing: .3px; }
+.nav-links { display: flex; gap: 1.5rem; list-style: none; }
+.nav-links a { color: var(--text-muted); font-size: .85rem; font-weight: 500; }
+.nav-links a:hover { color: var(--accent); }
+
+/* --- Hero --- */
+.hero {
+  min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center;
+  padding-top: 3.5rem;
+  background: radial-gradient(ellipse at 50% 20%, rgba(232,197,71,.06) 0%, transparent 55%);
+}
+.hero-tag { text-transform: uppercase; letter-spacing: 4px; font-size: .75rem; color: var(--accent); font-weight: 600; margin-bottom: 1rem; }
+.hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; line-height: 1.2; margin-bottom: .75rem; }
+.hero h1 span { color: var(--accent); }
+.hero .tagline { font-size: 1.2rem; color: var(--text-muted); margin-bottom: .5rem; font-weight: 400; }
+.hero .sub { font-size: .95rem; color: var(--text-muted); max-width: 500px; margin: 0 auto; }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+.hero h1, .hero .tagline, .hero .hero-tag, .hero .sub { animation: fadeUp .65s ease both; }
+.hero .hero-tag { animation-delay: .1s; }
+.hero h1 { animation-delay: .2s; }
+.hero .tagline { animation-delay: .35s; }
+.hero .sub { animation-delay: .5s; }
+
+/* --- Section Titles --- */
+.section-label { text-transform: uppercase; letter-spacing: 3px; font-size: .7rem; color: var(--accent); font-weight: 600; margin-bottom: .4rem; }
+.section-title { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 800; margin-bottom: .75rem; }
+.section-desc { color: var(--text-muted); max-width: 600px; font-size: .95rem; }
+
+/* --- Bio / Sections --- */
+.bio-section { border-bottom: 1px solid rgba(255,255,255,.05); }
+.bio-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: center; }
+.bio-grid.reverse { direction: rtl; }
+.bio-grid.reverse > * { direction: ltr; }
+.bio-image-placeholder {
+  aspect-ratio: 1; background: var(--bg-card); border-radius: var(--radius);
+  border: 1px solid rgba(232,197,71,.1); display: flex; align-items: center; justify-content: center;
+  color: var(--text-muted); font-size: .8rem;
+}
+.bio-text p { color: var(--text-muted); margin-bottom: 1rem; }
+
+/* --- Gallery --- */
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 2rem; }
+.gallery-item {
+  aspect-ratio: 1; background: var(--bg-card); border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,.05); display: flex; align-items: center; justify-content: center;
+  color: var(--text-muted); font-size: .75rem; transition: border-color .3s;
+}
+.gallery-item:hover { border-color: var(--accent); }
+
+/* --- Values --- */
+.values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; margin-top: 2rem; }
+.value-card {
+  background: var(--bg-card); border-radius: var(--radius); padding: 1.75rem;
+  border: 1px solid rgba(255,255,255,.05); transition: transform .3s, border-color .3s;
+}
+.value-card:hover { transform: translateY(-3px); border-color: var(--accent); }
+.value-card .icon { font-size: 1.5rem; margin-bottom: .75rem; }
+.value-card h3 { font-size: 1rem; margin-bottom: .4rem; font-weight: 700; }
+.value-card p { font-size: .85rem; color: var(--text-muted); }
+
+/* --- Social --- */
+.social-bar { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem; }
+.social-link {
+  padding: .6rem 1.4rem; background: var(--bg-card); border: 1px solid rgba(255,255,255,.06);
+  border-radius: 50px; font-size: .85rem; font-weight: 600; color: var(--text-muted); transition: all .2s;
+}
+.social-link:hover { border-color: var(--accent); color: var(--accent); }
+
+/* --- Footer --- */
+.footer { padding: 2.5rem 0; border-top: 1px solid rgba(232,197,71,.1); text-align: center; }
+.footer p { color: var(--text-muted); font-size: .8rem; }
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .bio-grid, .bio-grid.reverse { grid-template-columns: 1fr; direction: ltr; }
+  section { padding: 3rem 0; }
+}
+@media (max-width: 480px) {
+  .nav-links { display: none; }
+  .hero { min-height: 85vh; }
+}
