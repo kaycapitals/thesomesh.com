@@ -102,17 +102,47 @@
     </div>
   </section>
 
-  <!-- Gallery -->
+  <!-- YouTube Vlog -->
+  <section class="bio-section">
+    <div class="container">
+      <p class="section-label">Watch</p>
+      <h2 class="section-title">A Day in My Life</h2>
+      <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;margin-top:20px;">
+        <iframe src="https://www.youtube-nocookie.com/embed/syhWtEKfnhE" title="Somesh - Day in the Life" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo Gallery - Auto Sliding -->
   <section>
     <div class="container">
       <p class="section-label">Moments</p>
       <h2 class="section-title">Life in Frames</h2>
-      <div class="gallery-grid">
-        <div class="gallery-item"><img src="images/hero.jpg" alt="Somesh at his trading desk" style="width:100%;border-radius:8px;"></div>
-        <div class="gallery-item"><img src="images/lifestyle.jpg" alt="Somesh lifestyle" style="width:100%;border-radius:8px;"></div>
-        <div class="gallery-item"><img src="images/travel.jpg" alt="Somesh traveling" style="width:100%;border-radius:8px;"></div>
+    </div>
+    <div style="overflow:hidden;padding:20px 0;">
+      <div style="display:flex;gap:16px;animation:slideGallery 25s linear infinite;">
+        <img src="images/hero.jpg" alt="Somesh at desk with car" style="height:250px;border-radius:10px;flex-shrink:0;">
+        <img src="images/lifestyle.jpg" alt="Somesh lifestyle" style="height:250px;border-radius:10px;flex-shrink:0;">
+        <img src="images/travel.jpg" alt="Somesh traveling" style="height:250px;border-radius:10px;flex-shrink:0;">
+        <img src="images/trading-focused.jpg" alt="Somesh focused on trading" style="height:250px;border-radius:10px;flex-shrink:0;">
+        <img src="images/car-pose.jpg" alt="Somesh with car" style="height:250px;border-radius:10px;flex-shrink:0;">
+        <img src="images/desk-car-front.jpg" alt="Somesh at desk" style="height:250px;border-radius:10px;flex-shrink:0;">
+        <img src="images/trading-charts-studio.jpg" alt="Trading studio" style="height:250px;border-radius:10px;flex-shrink:0;">
+        <img src="images/studio-setup-wide.jpg" alt="Studio setup" style="height:250px;border-radius:10px;flex-shrink:0;">
+        <img src="images/desk-portrait.jpg" alt="Somesh portrait" style="height:250px;border-radius:10px;flex-shrink:0;">
+        <img src="images/lifestyle-plane.jpg" alt="Somesh on a plane" style="height:250px;border-radius:10px;flex-shrink:0;">
+        <!-- Duplicates for infinite loop -->
+        <img src="images/hero.jpg" alt="Somesh" style="height:250px;border-radius:10px;flex-shrink:0;">
+        <img src="images/lifestyle.jpg" alt="Lifestyle" style="height:250px;border-radius:10px;flex-shrink:0;">
+        <img src="images/travel.jpg" alt="Travel" style="height:250px;border-radius:10px;flex-shrink:0;">
+        <img src="images/trading-focused.jpg" alt="Trading" style="height:250px;border-radius:10px;flex-shrink:0;">
+        <img src="images/car-pose.jpg" alt="Car" style="height:250px;border-radius:10px;flex-shrink:0;">
+        <img src="images/desk-car-front.jpg" alt="Desk" style="height:250px;border-radius:10px;flex-shrink:0;">
       </div>
     </div>
+    <style>
+      @keyframes slideGallery { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    </style>
   </section>
 
   <!-- Values -->
@@ -160,7 +190,7 @@
   </section>
 
   <footer class="footer" role="contentinfo">
-    <p>&copy; 2025 Somesh. Built with caffeine and candlesticks.</p>
+    <p>&copy; 2026 Somesh. Built with caffeine and candlesticks.</p>
   </footer>
 
 </body>
